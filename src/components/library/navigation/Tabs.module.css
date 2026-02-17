@@ -1,0 +1,100 @@
+/* Tabs - Animated Tab Navigation */
+
+.tabs {
+  width: 100%;
+}
+
+.tabList {
+  position: relative;
+  display: flex;
+  gap: 0;
+}
+
+.tab {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.tab:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tab.active {
+  color: white;
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* === UNDERLINE VARIANT === */
+
+.underline .tabList {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.underline .indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-primary, #6366f1);
+  border-radius: 2px 2px 0 0;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === PILL VARIANT === */
+
+.pill .tabList {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.pill .tab {
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+.pill .indicator {
+  position: absolute;
+  top: 4px;
+  height: calc(100% - 8px);
+  background: var(--color-primary, #6366f1);
+  border-radius: 8px;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.pill .tab.active {
+  color: white;
+}
+
+/* === PANEL === */
+
+.panel {
+  padding: 1.5rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

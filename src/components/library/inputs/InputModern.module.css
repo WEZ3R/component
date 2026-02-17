@@ -1,0 +1,121 @@
+/* ========================================
+   INPUT MODERN
+   ======================================== */
+
+.inputWrap {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--color-dark);
+  background: transparent;
+  border: 2px solid var(--color-gray-300);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.inputWrap.inputFocused .input {
+  border-color: var(--color-primary);
+}
+
+.inputLabel {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--color-gray-400);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 4px;
+}
+
+.inputWrap.inputFocused .inputLabel,
+.inputWrap.inputFilled .inputLabel {
+  top: 0;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.inputLine {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 0 0 12px 12px;
+}
+
+.inputWrap.inputFocused .inputLine {
+  width: 100%;
+}
+
+/* Variant: underline */
+.input_underline .input {
+  border: none;
+  border-bottom: 2px solid var(--color-gray-300);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input_underline.inputFocused .input {
+  border-bottom-color: var(--color-primary);
+}
+
+.input_underline .inputLabel {
+  left: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.input_underline .inputLine {
+  display: none;
+}
+
+/* Variant: filled */
+.input_filled .input {
+  background: var(--color-gray-100);
+  border-color: transparent;
+}
+
+.input_filled.inputFocused .input {
+  background: white;
+  border-color: var(--color-primary);
+}
+
+.input_filled .inputLabel {
+  background: transparent;
+}
+
+.input_filled.inputFocused .inputLabel,
+.input_filled.inputFilled .inputLabel {
+  background: white;
+}
+
+/* With icon */
+.inputIcon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.125rem;
+  color: var(--color-gray-400);
+  z-index: 2;
+}
+
+.inputWrap.inputFocused .inputIcon {
+  color: var(--color-primary);
+}

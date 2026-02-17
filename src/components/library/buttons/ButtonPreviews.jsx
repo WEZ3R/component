@@ -1,13 +1,15 @@
-import {
-  ButtonPrimary,
-  ButtonSecondary,
-  ButtonGhost,
-  ButtonGlow,
-  ButtonOutlineGradient,
-  ButtonPill,
-  Button3D,
-  ButtonIcon,
-} from './Buttons'
+import { ButtonPrimary } from './ButtonPrimary'
+import { ButtonSecondary } from './ButtonSecondary'
+import { ButtonGhost } from './ButtonGhost'
+import { ButtonGlow } from './ButtonGlow'
+import { ButtonOutlineGradient } from './ButtonOutlineGradient'
+import { ButtonPill } from './ButtonPill'
+import { Button3D } from './Button3D'
+import { ButtonIcon } from './ButtonIcon'
+import { ButtonMagnetic } from './ButtonMagnetic'
+import { ButtonNeon } from './ButtonNeon'
+import { ButtonRipple } from './ButtonRipple'
+import { IconArrowRight, IconPlus, IconHeart, IconStar } from '../../ui/Icons'
 import styles from './ButtonPreviews.module.css'
 
 /**
@@ -23,7 +25,7 @@ export function PreviewButtonPrimary() {
         <ButtonPrimary size="md">Medium</ButtonPrimary>
         <ButtonPrimary size="lg">Large</ButtonPrimary>
       </div>
-      <ButtonPrimary size="md" icon="→">
+      <ButtonPrimary size="md" icon={<IconArrowRight size={16} />}>
         With Icon
       </ButtonPrimary>
     </div>
@@ -108,14 +110,51 @@ export function PreviewButtonIcon() {
   return (
     <div className={styles.previewLight}>
       <div className={styles.buttonGroup}>
-        <ButtonIcon icon="→" variant="filled" size="sm" />
-        <ButtonIcon icon="→" variant="filled" size="md" />
-        <ButtonIcon icon="→" variant="filled" size="lg" />
+        <ButtonIcon icon={<IconArrowRight size={14} />} variant="filled" size="sm" />
+        <ButtonIcon icon={<IconArrowRight size={16} />} variant="filled" size="md" />
+        <ButtonIcon icon={<IconArrowRight size={18} />} variant="filled" size="lg" />
       </div>
       <div className={styles.buttonGroup}>
-        <ButtonIcon icon="+" variant="outline" size="md" />
-        <ButtonIcon icon="♥" variant="ghost" size="md" />
-        <ButtonIcon icon="★" variant="gradient" size="md" />
+        <ButtonIcon icon={<IconPlus size={16} />} variant="outline" size="md" />
+        <ButtonIcon icon={<IconHeart size={16} />} variant="ghost" size="md" />
+        <ButtonIcon icon={<IconStar size={16} />} variant="gradient" size="md" />
+      </div>
+    </div>
+  )
+}
+
+export function PreviewButtonMagnetic() {
+  return (
+    <div className={styles.previewLight}>
+      <div className={styles.buttonGroup}>
+        <ButtonMagnetic size="sm">Small</ButtonMagnetic>
+        <ButtonMagnetic size="md">Hover Me</ButtonMagnetic>
+        <ButtonMagnetic size="lg">Large</ButtonMagnetic>
+      </div>
+    </div>
+  )
+}
+
+export function PreviewButtonNeon() {
+  return (
+    <div className={styles.previewDark}>
+      <div className={styles.buttonGroup}>
+        <ButtonNeon color="pink">Pink</ButtonNeon>
+        <ButtonNeon color="cyan">Cyan</ButtonNeon>
+        <ButtonNeon color="green">Green</ButtonNeon>
+        <ButtonNeon color="yellow">Yellow</ButtonNeon>
+      </div>
+    </div>
+  )
+}
+
+export function PreviewButtonRipple() {
+  return (
+    <div className={styles.previewLight}>
+      <div className={styles.buttonGroup}>
+        <ButtonRipple color="indigo">Indigo</ButtonRipple>
+        <ButtonRipple color="rose">Rose</ButtonRipple>
+        <ButtonRipple color="teal">Teal</ButtonRipple>
       </div>
     </div>
   )

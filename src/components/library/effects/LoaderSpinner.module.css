@@ -1,0 +1,33 @@
+/* ========================================
+   LOADER SPINNER
+   ======================================== */
+
+.loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sizes */
+.sm { --loader-size: 24px; --loader-border: 2px; }
+.md { --loader-size: 40px; --loader-border: 3px; }
+.lg { --loader-size: 56px; --loader-border: 4px; }
+
+/* Colors */
+.color_primary { --loader-color: var(--color-primary); }
+.color_secondary { --loader-color: var(--color-secondary); }
+.color_accent { --loader-color: var(--color-accent); }
+.color_white { --loader-color: white; }
+
+.spinner {
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border: var(--loader-border) solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--loader-color);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,37 @@
+/* Marquee - Infinite Scroll Ticker */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--duration, 10s) linear infinite;
+  animation-direction: var(--direction, normal);
+}
+
+.content {
+  display: flex;
+  gap: var(--gap, 48px);
+  align-items: center;
+  flex-shrink: 0;
+  padding-right: var(--gap, 48px);
+}
+
+.pausable:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

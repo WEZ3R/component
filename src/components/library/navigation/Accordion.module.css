@@ -1,0 +1,68 @@
+/* Accordion - Collapsible Panels */
+
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.item.open {
+  border-color: rgba(var(--color-primary-rgb, 99, 102, 241), 0.2);
+  background: rgba(var(--color-primary-rgb, 99, 102, 241), 0.04);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  text-align: left;
+}
+
+.trigger:hover {
+  color: white;
+}
+
+.triggerText {
+  flex: 1;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.35);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+.open .chevron {
+  transform: rotate(180deg);
+  color: var(--color-primary, #6366f1);
+}
+
+.content {
+  overflow: hidden;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contentInner {
+  padding: 0 1.25rem 1.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+}

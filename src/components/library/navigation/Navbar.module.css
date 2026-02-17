@@ -1,0 +1,517 @@
+/* Navbar – Mega Menu Header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  font-family: inherit;
+}
+
+.header *,
+.header *::before,
+.header *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── Bar ─────────────────────────────────────────── */
+
+.bar {
+  height: var(--h, 72px);
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.barInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+/* ─── Groupes ─────────────────────────────────────── */
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.right {
+  gap: 24px;
+}
+
+/* ─── Logo ────────────────────────────────────────── */
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 48px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Nav items ───────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navItem {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  position: relative;
+}
+
+.navLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Dropdown ────────────────────────────────────── */
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    background 0.3s ease;
+}
+
+.dropdownOpen {
+  max-height: 500px;
+  opacity: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Panneaux ────────────────────────────────────── */
+
+.ddPanel {
+  display: none;
+}
+
+.ddPanelActive {
+  display: block;
+}
+
+.ddInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* ─── Items niveau 2 ──────────────────────────────── */
+
+.ddItem {
+  position: relative;
+}
+
+.ddItem > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 20px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.ddItem > a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Sous-menu niveau 3 ──────────────────────────── */
+
+.sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 4px 0;
+  min-width: 220px;
+  z-index: 10;
+}
+
+.ddItem:hover > .sub {
+  display: block;
+}
+
+.subLink {
+  display: block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.subLink:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Niveau 4 */
+.lvl4 {
+  display: block;
+  padding: 5px 20px 5px 32px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #1a1a2e;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.lvl4::before {
+  content: '\2022';
+  margin-right: 8px;
+  opacity: 0.5;
+}
+
+.lvl4:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ─── CTA Button ──────────────────────────────────── */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #ffe5f3;
+  color: #e5007d !important;
+  border: 1px solid #e5007d;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #e5007d;
+  color: #fff !important;
+}
+
+/* ─── Social ──────────────────────────────────────── */
+
+.social {
+  display: flex;
+  align-items: center;
+  color: #0077b5;
+  transition: opacity 0.2s;
+}
+
+.social:hover {
+  opacity: 0.7;
+}
+
+/* ─── Burger ──────────────────────────────────────── */
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  border: none;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1a1a2e;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.burger span + span {
+  margin-top: 5px;
+}
+
+.burgerActive span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerActive span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile Drawer ───────────────────────────────── */
+
+.mobile {
+  display: none;
+  position: fixed;
+  top: var(--h, 72px);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--h, 72px));
+  height: calc(100dvh - var(--h, 72px));
+  background: #fff;
+  z-index: 99998;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileOpen {
+  transform: translateX(0);
+}
+
+/* Sections */
+.mobSection {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mobHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  text-align: left;
+}
+
+.mobArrow,
+.mobArrowSm {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.mobArrowSm {
+  width: 6px;
+  height: 6px;
+  border-width: 1.5px;
+}
+
+.mobArrowUp {
+  transform: rotate(-135deg);
+}
+
+.mobBody {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobLink {
+  display: block;
+  padding: 10px 24px 10px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+  transition: background 0.15s ease;
+  text-decoration: none;
+}
+
+.mobLink:active {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mobSubHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 24px 10px 32px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  text-align: left;
+}
+
+.mobSubBody {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobLvl3 {
+  display: block;
+  padding: 10px 24px 10px 48px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.mobLvl4 {
+  display: block;
+  padding: 8px 24px 8px 56px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.mobLvl4::before {
+  content: '\2022';
+  margin-right: 8px;
+  opacity: 0.5;
+}
+
+.mobActions {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.mobBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.mobHeaderActive {
+  /* Juste un flag CSS pour le chevron */
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none !important;
+  }
+
+  .navItemRight {
+    display: none !important;
+  }
+
+  .right > .cta {
+    display: none !important;
+  }
+
+  .right > .social {
+    display: none !important;
+  }
+
+  .dropdown {
+    display: none !important;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .right {
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    margin-right: 0;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .barInner {
+    padding: 0 16px;
+  }
+
+  .mobHeader {
+    padding: 16px 16px;
+  }
+
+  .mobLink {
+    padding-left: 24px;
+  }
+
+  .mobLvl3 {
+    padding-left: 40px;
+  }
+
+  .mobLvl4 {
+    padding-left: 48px;
+  }
+
+  .mobSubHeader {
+    padding-left: 24px;
+  }
+
+  .mobActions {
+    padding: 20px 16px;
+  }
+}

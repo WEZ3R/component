@@ -1,0 +1,302 @@
+/* ========================================
+   THEME EDITOR PANEL
+   ======================================== */
+
+.panel {
+  width: 260px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resetBtn {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  background: none;
+  border: none;
+}
+
+.resetBtn:hover {
+  color: var(--color-error);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Presets Strip */
+.presets {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-gray-100);
+  overflow-x: auto;
+}
+
+.presets::-webkit-scrollbar {
+  display: none;
+}
+
+.presetBtn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+  background: none;
+}
+
+.presetBtn:hover {
+  background: var(--color-gray-50);
+}
+
+.presetBtn.active {
+  border-color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.presetSwatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+.presetSwatch span {
+  width: 50%;
+  height: 50%;
+}
+
+.presetName {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--color-gray-500);
+  white-space: nowrap;
+}
+
+.presetBtn.active .presetName {
+  color: var(--color-primary);
+}
+
+/* Collapsible Section */
+.section {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.sectionHeader:hover {
+  background: var(--color-gray-50);
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chevron {
+  font-size: 10px;
+  color: var(--color-gray-400);
+  transition: transform 0.2s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.sectionContent {
+  padding: 0 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Color Row */
+.colorRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.colorInput {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-gray-200);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  flex-shrink: 0;
+}
+
+.colorInput::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+.colorInput::-webkit-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+
+.colorInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.colorLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.colorValue {
+  font-size: 9px;
+  color: var(--color-gray-400);
+  font-family: var(--font-mono);
+}
+
+/* Radius Options */
+.radiusGroup {
+  display: flex;
+  gap: 4px;
+  background: var(--color-gray-50);
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.radiusBtn {
+  flex: 1;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-gray-500);
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.radiusBtn:hover {
+  color: var(--color-dark);
+}
+
+.radiusBtn.active {
+  background: white;
+  color: var(--color-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Font Select */
+.fontSelect {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-dark);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.fontSelect:focus {
+  border-color: var(--color-primary);
+}
+
+/* Footer */
+.footer {
+  padding: 10px 14px;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.copyBtn {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.copyBtn:hover {
+  background: var(--color-gray-100);
+  color: var(--color-dark);
+}
+
+.copyBtn.copied {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+  border-color: var(--color-success);
+}

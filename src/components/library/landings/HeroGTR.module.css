@@ -1,0 +1,222 @@
+/* HeroGTR */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+/* Grid image background */
+.gridBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Gradient overlay for text readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 3;
+  padding: clamp(2rem, 5vw, 4rem);
+  padding-left: clamp(2.5rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Title */
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.titleChar {
+  display: inline-block;
+}
+
+/* Description */
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 500px;
+  line-height: 1.7;
+  margin-top: 1rem;
+  text-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.description.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA Button */
+.cta {
+  position: relative;
+  margin-top: 1.5rem;
+  padding: 0.85rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  overflow: hidden;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta:hover {
+  box-shadow: 0 0 25px rgba(var(--color-accent-rgb), 0.4);
+}
+
+.ctaLatin,
+.ctaKanji {
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              opacity 0.3s ease;
+}
+
+.ctaLatin {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaKanji {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.cta:hover .ctaLatin {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.cta:hover .ctaKanji {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE - LAPTOP (1024px)
+   ======================================== */
+
+@container viewport (max-width: 1024px) {
+  .content {
+    padding: 2rem;
+    padding-left: 3rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px)
+   ======================================== */
+
+@container viewport (max-width: 768px) {
+  .content {
+    padding: 1.5rem;
+    padding-left: 1.5rem;
+    justify-content: center;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (480px)
+   ======================================== */
+
+@container viewport (max-width: 480px) {
+  .content {
+    padding: 1.25rem;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+  }
+}

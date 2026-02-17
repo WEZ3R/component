@@ -1,0 +1,30 @@
+/* Navigation Preview Containers */
+
+.previewDark {
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.tabsContainer {
+  width: 100%;
+  max-width: 550px;
+}
+
+.accordionContainer {
+  width: 100%;
+  max-width: 550px;
+}
+
+.variantLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0 0.75rem 0;
+}

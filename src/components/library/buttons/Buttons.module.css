@@ -50,12 +50,12 @@
 .primary {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 14px rgba(var(--color-primary-rgb), 0.4);
 }
 
 .primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 20px rgba(var(--color-primary-rgb), 0.5);
 }
 
 .primary:active {
@@ -121,19 +121,19 @@
 }
 
 .glowPrimary {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
 }
 
 .glowSecondary {
-  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, rgba(var(--color-secondary-rgb), 0.8) 100%);
 }
 
 .glowCyan {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, rgba(var(--color-accent-rgb), 0.8) 100%);
 }
 
 .glowGreen {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
 }
 
 /* ========================================
@@ -266,15 +266,15 @@
 }
 
 .btn3dSecondary {
-  background: #ec4899;
+  background: var(--color-secondary);
 }
 
 .btn3dSecondary::before {
-  background: #db2777;
+  background: rgba(var(--color-secondary-rgb), 0.7);
 }
 
 .btn3dSuccess {
-  background: #10b981;
+  background: var(--color-success);
 }
 
 .btn3dSuccess::before {
@@ -363,5 +363,131 @@
 
 .btnIconGradient:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.4);
+}
+
+/* ========================================
+   MAGNETIC BUTTON
+   ======================================== */
+
+.magnetic {
+  background: var(--color-dark);
+  color: white;
+  transition: box-shadow var(--transition-base);
+  will-change: transform;
+}
+
+.magnetic:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   NEON BUTTON
+   ======================================== */
+
+.neon {
+  background: transparent;
+  border: 2px solid;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.neonPink {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  text-shadow: 0 0 8px var(--color-secondary), 0 0 20px var(--color-secondary);
+  box-shadow: inset 0 0 12px rgba(var(--color-secondary-rgb), 0.15), 0 0 12px rgba(var(--color-secondary-rgb), 0.3);
+}
+
+.neonPink:hover {
+  background: rgba(var(--color-secondary-rgb), 0.1);
+  box-shadow: inset 0 0 20px rgba(var(--color-secondary-rgb), 0.2), 0 0 30px rgba(var(--color-secondary-rgb), 0.5);
+}
+
+.neonCyan {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  text-shadow: 0 0 8px var(--color-accent), 0 0 20px var(--color-accent);
+  box-shadow: inset 0 0 12px rgba(var(--color-accent-rgb), 0.15), 0 0 12px rgba(var(--color-accent-rgb), 0.3);
+}
+
+.neonCyan:hover {
+  background: rgba(var(--color-accent-rgb), 0.1);
+  box-shadow: inset 0 0 20px rgba(var(--color-accent-rgb), 0.2), 0 0 30px rgba(var(--color-accent-rgb), 0.5);
+}
+
+.neonGreen {
+  color: var(--color-success);
+  border-color: var(--color-success);
+  text-shadow: 0 0 8px var(--color-success), 0 0 20px var(--color-success);
+  box-shadow: inset 0 0 12px rgba(16, 185, 129, 0.15), 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.neonGreen:hover {
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.2), 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+.neonYellow {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+  text-shadow: 0 0 8px var(--color-warning), 0 0 20px var(--color-warning);
+  box-shadow: inset 0 0 12px rgba(245, 158, 11, 0.15), 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.neonYellow:hover {
+  background: rgba(245, 158, 11, 0.1);
+  box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.2), 0 0 30px rgba(245, 158, 11, 0.5);
+}
+
+/* ========================================
+   RIPPLE BUTTON
+   ======================================== */
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.rippleIndigo {
+  background: var(--color-primary);
+}
+
+.rippleIndigo:hover {
+  background: var(--color-primary-dark);
+}
+
+.rippleRose {
+  background: var(--color-secondary);
+}
+
+.rippleRose:hover {
+  background: rgba(var(--color-secondary-rgb), 0.85);
+}
+
+.rippleTeal {
+  background: var(--color-accent);
+}
+
+.rippleTeal:hover {
+  background: rgba(var(--color-accent-rgb), 0.85);
+}
+
+.rippleWave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleExpand 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleExpand {
+  to {
+    transform: translate(-50%, -50%) scale(25);
+    opacity: 0;
+  }
 }

@@ -42,13 +42,7 @@ export function ComponentGallery({ components = [], onSelect, className = '' }) 
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join('')
 
-    const pathMap = {
-      'landings': `${LIBRARY_BASE_PATH}\\landings\\${componentName}.jsx`,
-      'buttons': `${LIBRARY_BASE_PATH}\\buttons\\Buttons.jsx`,
-      'effects': `${LIBRARY_BASE_PATH}\\effects\\${componentName}.jsx`,
-    }
-
-    return pathMap[categoryFolder] || `${LIBRARY_BASE_PATH}\\${categoryFolder}\\${componentName}.jsx`
+    return `${LIBRARY_BASE_PATH}\\${categoryFolder}\\${componentName}.jsx`
   }
 
   const generatePrompt = (component) => {

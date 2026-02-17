@@ -1,0 +1,61 @@
+/* SpotlightCard - Mouse-tracking glow card */
+
+.card {
+  position: relative;
+  border-radius: var(--radius-xl, 16px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  width: 320px;
+  cursor: default;
+}
+
+.spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.borderGlow {
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md, 8px);
+  background: rgba(var(--color-primary-rgb, 99, 102, 241), 0.1);
+  color: var(--color-primary, #6366f1);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin: 0;
+}

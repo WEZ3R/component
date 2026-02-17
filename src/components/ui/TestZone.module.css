@@ -68,9 +68,38 @@
   margin-top: 36px;
   position: relative;
   z-index: 2;
+  container-type: inline-size;
+  container-name: viewport;
 }
 
 .content > * {
+  width: 100%;
+}
+
+/* Device Frame - for viewport simulation */
+.deviceFrame {
+  width: 100%;
+  min-height: calc(100vh - 36px);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: var(--color-gray-100);
+  padding: 0;
+}
+
+.deviceContent {
+  position: relative;
+  max-width: 100%;
+  min-height: calc(100vh - 36px);
+  background: var(--color-white);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 4px 40px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  container-type: inline-size;
+  container-name: viewport;
+}
+
+.deviceContent > * {
   width: 100%;
 }
 
@@ -102,83 +131,3 @@
   font-size: 0.875rem;
 }
 
-/* Breakpoint indicators */
-.breakpoints {
-  position: fixed;
-  bottom: var(--spacing-4);
-  left: var(--spacing-4);
-  display: flex;
-  gap: var(--spacing-2);
-  z-index: var(--z-fixed);
-}
-
-.bp {
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  font-size: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: var(--color-gray-200);
-  color: var(--color-gray-500);
-  opacity: 0.5;
-  transition: all var(--transition-fast);
-}
-
-/* Mobile first - highlight mobile by default on small screens */
-.bpMobile {
-  background: var(--color-primary);
-  color: white;
-  opacity: 1;
-}
-
-.bpTablet,
-.bpLaptop,
-.bpDesktop {
-  display: none;
-}
-
-/* Tablet (768px+) */
-@media (min-width: 768px) {
-  .bpMobile {
-    background: var(--color-gray-200);
-    color: var(--color-gray-500);
-    opacity: 0.5;
-  }
-  .bpTablet {
-    display: block;
-    background: var(--color-accent);
-    color: white;
-    opacity: 1;
-  }
-}
-
-/* Laptop (1024px+) */
-@media (min-width: 1024px) {
-  .bpTablet {
-    background: var(--color-gray-200);
-    color: var(--color-gray-500);
-    opacity: 0.5;
-  }
-  .bpLaptop {
-    display: block;
-    background: var(--color-warning);
-    color: white;
-    opacity: 1;
-  }
-}
-
-/* Desktop (1280px+) */
-@media (min-width: 1280px) {
-  .bpLaptop {
-    background: var(--color-gray-200);
-    color: var(--color-gray-500);
-    opacity: 0.5;
-  }
-  .bpDesktop {
-    display: block;
-    background: var(--color-success);
-    color: white;
-    opacity: 1;
-  }
-}

@@ -1,0 +1,89 @@
+/* ========================================
+   TESTIMONIAL CARD
+   ======================================== */
+
+.testimonial {
+  padding: 2rem;
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.testimonialStars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.starFilled {
+  color: var(--color-warning);
+  display: inline-flex;
+}
+
+.starFilled svg {
+  fill: var(--color-warning);
+  stroke: var(--color-warning);
+}
+
+.starEmpty {
+  color: var(--color-gray-200);
+  display: inline-flex;
+}
+
+.starEmpty svg {
+  fill: var(--color-gray-200);
+  stroke: var(--color-gray-200);
+}
+
+.testimonialQuote {
+  font-size: 1rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonialAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.testimonialAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialName {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.testimonialRole {
+  font-size: 0.8125rem;
+  color: var(--color-gray-400);
+}

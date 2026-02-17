@@ -1,0 +1,48 @@
+/* ========================================
+   LOADER BARS
+   ======================================== */
+
+.loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sizes */
+.sm { --loader-size: 24px; }
+.md { --loader-size: 40px; }
+.lg { --loader-size: 56px; }
+
+/* Colors */
+.color_primary { --loader-color: var(--color-primary); }
+.color_secondary { --loader-color: var(--color-secondary); }
+.color_accent { --loader-color: var(--color-accent); }
+.color_white { --loader-color: white; }
+
+.bars {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--loader-size) * 0.1);
+  height: var(--loader-size);
+}
+
+.bar {
+  width: calc(var(--loader-size) * 0.12);
+  height: 60%;
+  background: var(--loader-color);
+  border-radius: 9999px;
+  animation: barStretch 1.2s ease-in-out infinite;
+}
+
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes barStretch {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}

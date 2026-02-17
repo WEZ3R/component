@@ -1,0 +1,101 @@
+/* ========================================
+   TOGGLE
+   ======================================== */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggleInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleTrack {
+  position: relative;
+  background: var(--color-gray-300);
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+.toggleTrack.sm {
+  width: 36px;
+  height: 20px;
+}
+
+.toggleTrack.md {
+  width: 48px;
+  height: 26px;
+}
+
+.toggleTrack.lg {
+  width: 60px;
+  height: 32px;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              width 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sm .toggleThumb {
+  width: 16px;
+  height: 16px;
+}
+
+.md .toggleThumb {
+  width: 22px;
+  height: 22px;
+}
+
+.lg .toggleThumb {
+  width: 28px;
+  height: 28px;
+}
+
+/* Toggle ON state */
+.toggleOn.primary {
+  background: var(--color-primary);
+}
+
+.toggleOn.secondary {
+  background: var(--color-secondary);
+}
+
+.toggleOn.accent {
+  background: var(--color-accent);
+}
+
+.toggleOn.success {
+  background: var(--color-success);
+}
+
+.toggleOn.sm .toggleThumb {
+  transform: translateX(16px);
+}
+
+.toggleOn.md .toggleThumb {
+  transform: translateX(22px);
+}
+
+.toggleOn.lg .toggleThumb {
+  transform: translateX(28px);
+}
+
+.toggleLabel {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
